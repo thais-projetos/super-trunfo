@@ -1,0 +1,127 @@
+#include <stdio.h>
+#include <string.h>
+
+// Estrutura para representar uma cidade
+typedef struct {
+    char estado[50];
+    int codigo;
+    char nome[50];
+    long populacao;
+    double pib; // Em bilhões
+    double area; // Em km²
+    int pontos_turisticos;
+} Cidade;
+
+// Função para exibir os dados de uma cidade
+void exibirCidade(Cidade cidade) {
+    printf("\n--- Dados da Cidade ---\n");
+    printf("Estado: %s\n", cidade.estado);
+    printf("Codigo: %d\n", cidade.codigo);
+    printf("Nome: %s\n", cidade.nome);
+    printf("Populacao: %ld habitantes\n", cidade.populacao);
+    printf("PIB: %.2f bilhoes\n", cidade.pib);
+    printf("Area: %.2f km²\n", cidade.area);
+    printf("Pontos Turisticos: %d\n", cidade.pontos_turisticos);
+}
+
+// Função para o jogador escolher um atributo
+int escolherAtributo() {
+    int escolha;
+    printf("\nEscolha um atributo para comparar:\n");
+    printf("1 - Populacao\n");
+    printf("2 - PIB\n");
+    printf("3 - Area\n");
+    printf("4 - Pontos Turisticos\n");
+    scanf("%d", &escolha);
+    return escolha;
+}
+
+int main() {
+    Cidade jogador, computador;
+
+    // Entrada de dados para a carta do jogador
+    printf("Registro da Carta do Jogador:\n");
+    printf("Estado: ");
+    scanf("%s", jogador.estado);
+    printf("Codigo: ");
+    scanf("%d", &jogador.codigo);
+    printf("Nome da Cidade: ");
+    scanf("%s", jogador.nome);
+    printf("Populacao: ");
+    scanf("%ld", &jogador.populacao);
+    printf("PIB (em bilhoes): ");
+    scanf("%lf", &jogador.pib);
+    printf("Area (em km²): ");
+    scanf("%lf", &jogador.area);
+    printf("Pontos Turisticos: ");
+    scanf("%d", &jogador.pontos_turisticos);
+
+    // Entrada de dados para a carta do computador
+    printf("\nRegistro da Carta do Computador:\n");
+    printf("Estado: ");
+    scanf("%s", computador.estado);
+    printf("Codigo: ");
+    scanf("%d", &computador.codigo);
+    printf("Nome da Cidade: ");
+    scanf("%s", computador.nome);
+    printf("Populacao: ");
+    scanf("%ld", &computador.populacao);
+    printf("PIB (em bilhoes): ");
+    scanf("%lf", &computador.pib);
+    printf("Area (em km²): ");
+    scanf("%lf", &computador.area);
+    printf("Pontos Turisticos: ");
+    scanf("%d", &computador.pontos_turisticos);
+
+    // Exibe as cartas
+    printf("\nCarta do Jogador:\n");
+    exibirCidade(jogador);
+
+    printf("\nCarta do Computador:\n");
+    exibirCidade(computador);
+
+    // Jogador escolhe um atributo para comparar
+    int escolha = escolherAtributo();
+
+    // COMPARAÇÃO
+    double valorJogador, valorComputador;
+    char atributoEscolhido[50];
+
+    switch (escolha) {
+        case 1:
+            valorJogador = jogador.populacao;
+            valorComputador = computador.populacao;
+            strcpy(atributoEscolhido, "Populacao");
+            break;
+        case 2:
+            valorJogador = jogador.pib;
+            valorComputador = computador.pib;
+            strcpy(atributoEscolhido, "PIB");
+            break;
+        case 3:
+            valorJogador = jogador.area;
+            valorComputador = computador.area;
+            strcpy(atributoEscolhido, "Area");
+            break;
+        case 4:
+            valorJogador = jogador.pontos_turisticos;
+            valorComputador = computador.pontos_turisticos;
+            strcpy(atributoEscolhido, "Pontos Turisticos");
+            break;
+        default:
+            printf("Escolha invalida!\n");
+            return 1;
+    }
+
+    // RESULTADO
+    printf("\nComparando %s...\n", atributoEscolhido);
+    if (valorJogador > valorComputador) {
+        printf("Voce venceu!\n");
+    } else if (valorJogador < valorComputador) {
+        printf("O computador venceu!\n");
+    } else {
+        printf("Empate!\n");
+    }
+
+    return 0;
+}
