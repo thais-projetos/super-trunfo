@@ -1,43 +1,43 @@
 #include <stdio.h>
-
+//Desafio Super Trunfo países nivel novato.//
 int main() {
-    // carta do jogador
-    int codigo_jogador = 1;
-    char nome_jogador[50] = "Brasil";
-    char capital_jogador[50] = "Brasilia";
-    long populacao_jogador = 213000000;
-    double pib_jogador = 1.92; // Em trilhões
-    double area_jogador = 8515767.0; // Em km²
-    int pontos_turisticos_jogador = 50;
-
-    // carta do computador
-    int codigo_computador = 2;
-    char nome_computador[50] = "Estados Unidos";
-    char capital_computador[50] = "Washington, D.C.";
-    long populacao_computador = 331000000;
-    double pib_computador = 26.24; // Em trilhões
-    double area_computador = 9372610.0; // Em km²
-    int pontos_turisticos_computador = 100;
-
-    // Informações da carta do jogador
-    printf("Carta do Jogador:\n");
-    printf("Codigo: %d\n", codigo_jogador);
-    printf("Pais: %s\n", nome_jogador);
-    printf("Capital: %s\n", capital_jogador);
-    printf("Populacao: %ld habitantes\n", populacao_jogador);
-    printf("PIB: %.2f trilhoes\n", pib_jogador);
-    printf("Area: %.2f km²\n", area_jogador);
-    printf("Pontos Turisticos: %d\n", pontos_turisticos_jogador);
-
-    // Informações da carta do computador
-    printf("\nCarta do Computador:\n");
-    printf("Codigo: %d\n", codigo_computador);
-    printf("Pais: %s\n", nome_computador);
-    printf("Capital: %s\n", capital_computador);
-    printf("Populacao: %ld habitantes\n", populacao_computador);
-    printf("PIB: %.2f trilhoes\n", pib_computador);
-    printf("Area: %.2f km²\n", area_computador);
-    printf("Pontos Turisticos: %d\n", pontos_turisticos_computador);
-
+    // Carta 1
+    char estado1 = 'A';
+    char codigo1[] = "A01";
+    char nomeCidade1[] = "Curitiba";
+    int populacao1 = 1963726;
+    float area1 = 435.04;
+    float pib1 = 96.72;
+    int pontosTuristicos1 = 20;
+    
+    // Carta 2
+    char estado2 = 'B';
+    char codigo2[] = "B02";
+    char nomeCidade2[] = "Belo Horizonte";
+    int populacao2 = 2521564;
+    float area2 = 331.40;
+    float pib2 = 120.50;
+    int pontosTuristicos2 = 25;
+    
+    // Informações Carta 1
+    printf("Carta 1:\n");
+    printf("Estado: %c\n", estado1);
+    printf("Codigo: %s\n", codigo1);
+    printf("Nome da Cidade: %s\n", nomeCidade1);
+    printf("Populacao: %d\n", populacao1);
+    printf("Area: %.2f km²\n", area1);
+    printf("PIB: %.2f bilhoes de reais\n", pib1);
+    printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos1);
+    
+    // Informações Carta 2
+    printf("\nCarta 2:\n");
+    printf("Estado: %c\n", estado2);
+    printf("Codigo: %s\n", codigo2);
+    printf("Nome da Cidade: %s\n", nomeCidade2);
+    printf("Populacao: %d\n", populacao2);
+    printf("Area: %.2f km²\n", area2);
+    printf("PIB: %.2f bilhoes de reais\n", pib2);
+    printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos2);
+    
     return 0;
 }
